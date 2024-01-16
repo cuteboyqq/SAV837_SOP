@@ -124,3 +124,31 @@ Step5.
 	1) pip install -U onnx==1.6.0
 	2) source bin/envsetup.sh -o $ONNX_DIR
 	   where $ONNX_DIR is the path to the ONNX installation.  ( /usr/local/lib/python3.6/dist-packages/onnx
+	   
+	   
+	   
+	   [Create folder]
+==============================================================================
+
+Step1. Create a folder named "ADAS" under your QCS6490 project folder
+=> QCS6490/snpe-2.7.0.4264/examples/NativeCpp/ADAS
+
+Step2. Move all files into ADAS folder.
+
+
+[Build and Run ADAS application]
+==============================================================================
+
+Step1. cd QCS6490/snpe-2.7.0.4264
+
+Step2. source /etc/profile
+
+Step3. source source bin/envsetup.sh --o
+
+Step4. cd examples/NativeCpp/ADAS
+
+Step5. make
+
+Step6. cd /obj/local/x86_64-linux-clang
+
+Step7. ./snpe-sample -i [VIDEO_FILE_PATH]
