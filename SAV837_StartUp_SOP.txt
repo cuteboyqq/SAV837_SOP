@@ -1,0 +1,55 @@
+SVA837  Start up SOP
+================================================
+open putty
+IP: 192.168.1.1   
+before open putty, you need to let computer connect to the device
+Set the computer IPV4
+		Address : 192.168.1.4 
+		NetMask : 255.255.0.0
+		
+check the device is connect
+	[console] ping 192.168.1.1
+	open putty 192.168.1.1 :
+		account : root
+		password : ALUDS$#q
+[Hint : putty SSH will connect refused sometimes, wait a minute and connect again]
+
+Step 1 : in putty, set time
+	google search unix timestamp
+	type the timestamp in :
+	[putty] date -s @[unix timestamp]
+
+Step 2 : kill the cardv (default one)
+[putty] ps
+[putty] kill -9 PID
+
+Step 3: Test with cardv , and upload the cardv to this folder
+[putty] cd customer
+[putty] tftp -h (help)
+[putty] 
+
+=============================================================================
+How to get the cardv:
+1. build docker image
+2. create a docker container (docker run sav837) and go to container
+ 	[console] docker run -it -v [your/user/directory/sdk...:/home/ali] sav837:v1
+
+3. build project
+	[console] make clean_all
+	[console] make buuld_all
+4. build cardv (final)
+	go to the directory:
+	[console] cd sdk/verify/Cardvimpl/cardv
+	[console] make
+	after make successful :
+	[console] arm-linux-gnueabihf-strip bin/cardv
+==============================================================================
+5. install tftp hpa
+	google search : tftp hpa
+	
+6. copy thr "cardv"  to tftp server , and upload the cardv to the device   
+
+
+
+ 
+
