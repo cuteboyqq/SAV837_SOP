@@ -46,7 +46,7 @@ How to get the cardv:
 ==============================================================================
 5. install tftp hpa
 	google search : tftp hpa
-	
+	https://tsaiyuyan.github.io/2020/05/19/linux/ubuntu-an-zhuang-tftp-server/
 6. copy thr "cardv"  to tftp server , and upload the cardv to the device   
 
 
