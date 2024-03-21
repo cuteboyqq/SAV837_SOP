@@ -1,0 +1,23 @@
+[5:45 PM] Lukas Chen(陳主霖)
+一般user不能存取/dev/ttyUSB*
+
+如果你想一般使用者可存取這個裝置，你需用 root 帳號把使用者帳號加入 dialout 群組
+
+usermod -aG dialout wnc-jnr-330-clchen
+
+要登出再登入才可以
+ 
+screen /dev/ttyUSB1 115200
+ 
+putty serial, /dev/ttyUSB1 , 115200
+ 
+直接關掉terminal不會中止存取/dev/ttyUSB1的程式
+ 
+lsof /dev/ttyUSB1
+
+kill -9 
+
+close related terminals
+
+run screen again
+
